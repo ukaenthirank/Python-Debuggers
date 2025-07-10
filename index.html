@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python Debug Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Login Page -->
+  <div class="game-container" id="login-screen">
+    <h1>🧠 Python Debugging Game</h1>
+    <input type="text" id="username" placeholder="Enter your name" required>
+    <select id="avatar">
+      <option value="🐍">🐍 Snake</option>
+      <option value="🧠">🧠 Brain</option>
+      <option value="👩‍💻">👩‍💻 Coder</option>
+      <option value="🐱">🐱 Cat</option>
+      <option value="👾">👾 Bot</option>
+      <option value="🧙‍♂️">🧙‍♂️ Wizard</option>
+      <option value="🦊">🦊 Fox</option>
+    </select>
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <!-- Game Page -->
+  <div class="game-container hidden" id="game-screen">
+    <div class="header">
+      <h2 id="player-info"></h2>
+      <p>Score: <span id="score">0</span> | Level: <span id="level">1</span></p>
+    </div>
+    <div style="position: absolute; top: 15px; right: 20px; font-size: 20px;">⏱️ <span id="timer">5:00</span></div>
+    <pre id="code-snippet"></pre>
+    <textarea id="user-input" placeholder="Fix the error..." rows="6"></textarea>
+    <button onclick="submitAnswer()">Submit</button>
+    <button onclick="skipQuestion()">Skip</button>
+    <p id="message"></p>
+    <h3>🔽 Output:</h3>
+    <div id="output-box"></div>
+  </div>
+
+  <!-- Final Page -->
+  <div class="game-container hidden" id="end-screen">
+    <h1>🎉 Game Completed!</h1>
+    <p id="final-message"></p>
+    <h2>Thank you for participating in this game!<br>Once again, thank you!</h2>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
